@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Admin - Cstar Mobile Shop</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-storage-compat.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">Panel Admin - Cstar Mobile Shop</div>
+        <a href="index.html">Volver a Home</a>
+    </header>
+
+    <section id="adminLogin" class="admin-section">
+        <h2>Acceso Admin</h2>
+        <input type="password" id="adminPassword" placeholder="Ingresa password (default: neluis@@)">
+        <button onclick="loginAdmin()">Entrar</button>
+    </section>
+
+    <section id="adminContent" class="admin-section" style="display:none;">
+        <h2>Analytics</h2>
+        <p>Visitas: <span id="visitCount">0</span></p>
+        <p>Clics en Añadir: <span id="addClickCount">0</span></p>
+        <button onclick="resetAnalytics()">Resetear Contadores</button>
+
+        <h2>Productos</h2>
+        <div id="adminProductList"></div>
+
+        <h2>Añadir Nuevo Producto</h2>
+        <form id="addProductForm">
+            <input type="text" id="newName" placeholder="Nombre" required>
+            <textarea id="newDesc" placeholder="Descripción llamativa" required></textarea>
+            <input type="number" id="newPrice" placeholder="Precio (DOP)" required min="0">
+            <input type="file" id="newImage" accept="image/*" required>
+            <button type="submit">Añadir</button>
+        </form>
+
+        <h2>Configuración: Redes, Contacto y Password</h2>
+        <form id="configForm">
+            <textarea id="socialConfig" placeholder="HTML para redes" required></textarea>
+            <textarea id="contactConfig" placeholder="HTML para contacto" required></textarea>
+            <input type="password" id="newAdminPassword" placeholder="Nuevo password (deja vacío para no cambiar)">
+            <button type="submit">Guardar</button>
+        </form>
+    </section>
+
+    <script src="script.js"></script>
+    <script>loadAdmin();</script>
+</body>
+</html>
