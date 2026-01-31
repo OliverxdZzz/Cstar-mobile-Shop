@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cstar Mobile Shop - Accesorios Premium para Teléfonos</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-storage-compat.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">Cstar Mobile Shop</div>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Busca productos... o accede admin con neluis@@">
+            <button onclick="searchProducts()">Buscar</button>
+        </div>
+        <div class="cart-icon" onclick="toggleCart()">🛒 <span id="cartCount">0</span></div>
+    </header>
+
+    <section class="hero">
+        <h1>¡Eleva tu experiencia móvil con accesorios premium!</h1>
+        <p>Ofertas limitadas – Calidad inigualable a precios accesibles.</p>
+    </section>
+
+    <section class="catalog" id="catalog">
+        <h2>Catálogo de Productos</h2>
+        <div class="product-grid" id="productGrid"></div>
+    </section>
+
+    <section class="offers">
+        <h2>Ofertas Destacadas</h2>
+        <p>¡No te pierdas nuestros best-sellers! Envíos rápidos en Santo Domingo y todo RD.</p>
+    </section>
+
+    <footer>
+        <div id="socialLinks">
+            <h3>Redes Sociales</h3>
+            <!-- Cargado desde DB -->
+        </div>
+        <div id="contactInfo">
+            <h3>Contacto</h3>
+            <!-- Cargado desde DB -->
+        </div>
+        <p>&copy; 2026 Cstar Mobile Shop. Todos los derechos reservados.</p>
+    </footer>
+
+    <div class="cart-modal" id="cartModal">
+        <h2>Tu Carrito</h2>
+        <div id="cartItems"></div>
+        <p>Total: <span id="cartTotal">0</span> DOP</p>
+        <button onclick="checkout()">Checkout</button>
+        <button onclick="toggleCart()">Cerrar</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
